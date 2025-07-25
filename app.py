@@ -91,7 +91,7 @@ def telegram():
 
 @app.route("/stop_telegram",methods=["GET","POST"])
 def stop_telegram():
-    domain_url = 'https://dsat-ft1-clone-zpzf.onrender.com'
+    domain_url = 'https://github.com/sp437/dsat-ft1-clone'
     # The following line is used to delete the existing webhook URL for the Telegram bot
     delete_webhook_url = f"https://api.telegram.org/bot{TELEGRAM_BOT_TOKEN}/deleteWebhook"
     webhook_response = requests.post(delete_webhook_url, json={"url": domain_url, "drop_pending_updates": True})
@@ -132,7 +132,9 @@ def webhook():
             "text": response_message
         })
     return('ok', 200)
-
+@app.route('/sepia', methods=['GET', 'POST'])
+def sepia():
+    return render_template("sepia_hf.html")
 if __name__ == "__main__":
     app.run()
 
