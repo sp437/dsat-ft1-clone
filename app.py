@@ -4,7 +4,7 @@ from groq import Groq
 
 import os
 
-TELEGRAM_BOT_TOKEN = os.getenv("TELEGRAM_BOT_TOKEN")
+TELEGRAM_BOT_TOKEN = os.getenv("telegram")
 
 app = Flask(__name__)
 
